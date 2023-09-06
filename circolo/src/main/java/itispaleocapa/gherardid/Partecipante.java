@@ -1,4 +1,4 @@
-package circolo.src.main.java.itispaleocapa.gherardid;
+package itispaleocapa.gherardid;
 
 public class Partecipante implements java.io.Serializable {
   private static int next_code = 0;
@@ -14,6 +14,10 @@ public class Partecipante implements java.io.Serializable {
     this.eta = eta;
     this.sesso = sesso;
     setCodice();
+  }
+
+  public String toString() {
+    return codice + " " + nome + " " + cognome + " " + eta + " " + sesso;
   }
 
   //setter

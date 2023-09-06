@@ -1,7 +1,6 @@
-package circolo.src.main.java.itispaleocapa.gherardid;
+package itispaleocapa.gherardid;
 
 import java.io.*;
-import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Circolo {
@@ -14,7 +13,7 @@ public class Circolo {
   public void save() {
     try{
       //create an output stream to save the object to a file
-      FileOutputStream fileOut = new FileOutputStream("C:\\\\Users\\\\danig\\\\OneDrive\\\\Desktop\\\\5IA\\\\compitiVacanze\\\\informatica\\\\gestionaleCircolo\\\\circolo\\\\src\\\\main\\\\java\\\\itispaleocapa\\gherardid\\data.ser");
+      FileOutputStream fileOut = new FileOutputStream("C:\\Users\\danig\\OneDrive\\Desktop\\5IA\\compitiVacanze\\informatica\\gestionaleCircolo\\circolo\\src\\main\\java\\itispaleocapa\\gherardid\\data.ser");
       ObjectOutputStream out = new ObjectOutputStream(fileOut);
       //Serialize and save the object
       out.writeObject(partecipanti);
@@ -29,7 +28,7 @@ public class Circolo {
   public void load() {
     try{
       //create an input stream to load the object from a file
-      FileInputStream fileIn = new FileInputStream("C:\\Users\\danig\\OneDrive\\Desktop\\5IA\\compitiVacanze\\informatica\\gestionaleVoli\\gestionalevoli\\src\\main\\java\\gestionale\\data.ser");
+      FileInputStream fileIn = new FileInputStream("C:\\Users\\danig\\OneDrive\\Desktop\\5IA\\compitiVacanze\\informatica\\gestionaleCircolo\\circolo\\src\\main\\java\\itispaleocapa\\gherardid\\data.ser");
       ObjectInputStream in = new ObjectInputStream(fileIn);
 
       //load the object from the file
@@ -48,6 +47,9 @@ public class Circolo {
     }
   }
 
+  public void print() {
+    partecipanti.forEach(p -> System.out.println(p.getCodice() + " " + p.getNome() + " " + p.getCognome() + " " + p.getEta() + " " + p.getSesso()));
+  }
   
   
   public int aggiungiPartecipante(String nome, String cognome, int eta, char sesso) {
